@@ -17,7 +17,7 @@ Vue.config.productionTip = false;
 
 const routes = [{
   path: '/',
-  component: goods
+   redirect: '/goods'
 }, {
   path: '/goods',
   component: goods
