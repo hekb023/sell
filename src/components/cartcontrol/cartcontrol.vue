@@ -6,7 +6,7 @@
       </div>
     </transition>
     <div class="cart-count" v-show="food.count>0">{{food.count}}</div>
-    <div class="cart-add icon-add_circle" v-on:click="addCart"></div>
+    <div class="cart-add icon-add_circle" v-on:click.stop.prvent="addCart"></div>
   </div>
 </template>
 
@@ -29,6 +29,7 @@ export default {
       } else {
         this.food.count++;
       }
+      this.$bus.emit('add', event.target);
       this.$emit('event', event.target);
     },
     decreaseCart(event) {
@@ -61,7 +62,7 @@ export default {
         opacity:1
       &.move-enter, &.move-leave-active
         opacity: 0 
-        transform:translate3D(24px,0,0)
+        transform:translate3d(24px,0,0)
         .inner
           transform:rotate(180deg)
     .cart-count
