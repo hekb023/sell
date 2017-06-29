@@ -20,7 +20,7 @@
             </div>
           </div>
           <div class="cartcontrol-wrapper">
-            <cartcontrol v-on:event="addFirst" v-bind:food="food"></cartcontrol>
+            <cartcontrol v-on:event="addNext" v-bind:food="food"></cartcontrol>
           </div>
           <div v-on:click="addFirst" class="buy" v-show="!food.count || food.count===0">加入购物车</div>
         </div>
@@ -66,6 +66,9 @@ export default {
       }
       this.$emit('add', event.target);
       Vue.set(this.food, 'count', 1);
+    },
+    addNext(event) {
+      this.$emit('addNext', event);
     }
   },
   components: {

@@ -16,7 +16,7 @@
           <ul>
             <li v-on:click="selectFood(food,$event)" v-for="food in item.foods" class="food-item border-1px">
               <div class="icon">
-                <img width="57" height="57" v-bind:src="food.icon" />
+                <img width="57" height="57" v-bind:src="food.icon" >
               </div>
               <div class="content">
                 <h2 class="name">{{food.name}}</h2>
@@ -39,7 +39,7 @@
       </ul>
     </div>
     <shopcart ref="shopcart" v-bind:select-foods="selectFoods" v-bind:delivery-price="seller.deliveryPrice" v-bind:min-price="seller.minPrice"></shopcart>
-    <food v-on:add="getEvent" v-bind:food="selectedFood" ref="food"></food>
+    <food v-on:add="getEvent" v-on:addNext="getEvent" v-bind:food="selectedFood" ref="food"></food>
   </div>
 </template>
 
