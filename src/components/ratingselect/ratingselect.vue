@@ -68,14 +68,14 @@
           return;
         }
         this.selecttype = type;
-        this.$emit('ratingtype.select', type);
+        this.$emit('selectType', type);
       },
       toggleContent(event) {
         if (!event._constructed) {
           return;
         }
         this.onlycontent = !this.onlycontent;
-        this.$emit('content.toggle', this.onlycontent);
+        this.$emit('content', this.onlycontent);
       }
     }
   };
